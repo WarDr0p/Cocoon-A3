@@ -1,0 +1,101 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/png" href="{% static '/media/nav/icone.png'%}" />
+    <head>
+        <link rel="icon" href="{% static '/media/nav/favicon.ico'%}"/>
+        <meta charset="utf-8">
+        <title>Ma page test</title>
+    </head>
+    <div class="container-fullwidth" style="background-color: #2F5597;">
+        <nav class="navbar" >
+            <a class="navbar-brand-centered" href="/home">
+                <img src="{% static '/media/nav/logo.png' %}" height="46"  alt="Co'Coon">
+            </a>
+            <btn class="nav navbar-nav navbar-right" style="background-color: #2F5597;">
+                <li ><a style="color: white" href="/home/loginchoice"><img src= "{% static '/media/nav/image2.svg' %}" height="30"  alt="Co'Coon">  Mon Compte</a></li>
+            </btn>
+            <btn class="nav navbar-nav navbar-left" style="background-color: #2F5597;">
+                <li><a style="color: white" href="/home/rayon">Commander  <img src= "{% static '/media/nav/image1.svg' %}" height="30"  alt="Co'Coon"></a></li>
+            </btn>
+        </nav>
+    </div>
+
+<body class="center">
+    <div class="titre my-3"><img src="{% static '/media/nav/image1.svg' %}" height="30px"> Vos commandes</div>
+    {% if error %}
+            <div class="row my-4">
+                <div class="-lg-3 col-md-3"></div>
+                <div class="col-lg-6 col-md-6 text-center alert alert-danger">
+                    {{ error }}
+                </div>
+                <div class="-lg-3 col-md-3"></div>
+            </div>
+        {% endif %}
+        {% if commandes %}
+        {% for com in commandes %}
+         <div class="row">
+            <div class="col-lg-3 col-md-3 text-center">
+            </div>
+            <div class="col-lg-6 col-md-6 text-center cartborder">
+                <div class="row border-bottom mb-2 cocoonback">
+                    <div class="col-lg-3 col-md-3 mt-1 mb-2">
+                          Numéro : {{ com.0.id }}
+                    </div>
+                    <div class="col-lg-4 col-md-4 mt-1 mb-2">
+                          Date : {{ com.0.created_at }}
+                    </div>
+                    <div class="col-lg-4 col-md-4 mt-1 mb-2">
+                        Statut :
+                        {% if com.0.isValidated %}
+                            {% if com.0.isFulfilled %}
+                                <div>
+                                    Livrée
+                                </div>
+                            {% else %}
+                                <div class="text-success">
+                                Validée
+                                </div>
+                            {% endif %}
+                        {% else %}
+                            <div class="text-danger">
+                            Non validée
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% for item in com.1 %}
+                    <div class="col-lg-12 col-md-12 text-center">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3">
+                                Quantité : {{ item.quantity }}
+                            </div>
+                            <div class="col-lg-3 col-md-3">
+                                <img src="{% static "/media/" %}{{ item.product.categorie }}/{{ item.product.name }}.png" height="70px"  alt="">
+                            </div>
+                            <div class="col-lg-3 col-md-3">
+                                {{ item.product.name }}
+                            <br/>
+                            {{ item.product.unite }}
+                            <br/>
+                            {{ item.product.prix }} €
+                            </div>
+                            <div class="col-lg-3 col-md-3">
+                                Total : {{ item.price }} €
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-lg-2 col-md-2 text-center">
+         </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</body>
+</html>

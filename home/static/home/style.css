@@ -1,0 +1,176 @@
+@media screen and (min-width:768px){
+    .navbar-brand-centered {
+        position: absolute;
+        left: 45%;
+        #display: block;
+        #width: 160px;
+        #text-align: center;
+        #background-color: #2F5597;
+    }
+    .right{
+        position: absolute;
+        right : 0px;
+    }
+
+    .my-auto{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .bordered {
+        color: #2F5597;
+        text-decoration: none;
+        width: 12%;
+        overflow: hidden;
+    }
+
+        .cocoonback {
+            color: white;
+        background-color: #2F5597;
+    }
+
+    .bordered:hover {
+        COLOR: white;
+        TEXT-DECORATION: none;
+        background-color: #2F5597;
+        text-decoration: none;
+        width: 12%;
+        border-radius: 15px;
+    }
+
+    .left{
+        position: absolute;
+        left : 0px;
+    }
+
+    .cartborder{
+        overflow: hidden;
+        border-radius: 20px;
+        border: solid gray;
+        margin: 5px;
+        border-width: 2px;
+    }
+
+    .cocooner{
+        background-color: #2F5597;
+        width: 95%;
+        border-radius: 20px;
+        color: white;
+    }
+
+    .cocooner:hover{
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+    }
+
+    p{
+        width: 50%;
+    }
+    .navbar>.container .navbar-brand-centered,
+    .navbar>.container-fluid .navbar-brand-centered {
+        margin-left: -80px;
+    }
+    loginC{
+        position: relative;
+        font-family: Calibri;
+        color: #2F5597;
+        font-size: 24px;
+        left: 20px;
+        font-weight: bold;
+    }
+
+    .nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+    }
+
+    .beautifuller{
+        text-align: justify;
+        color: lightgray;
+        height: 20%;
+        font-family: Calibri;
+        font-size: 19px;
+        border-spacing: 10px;
+        padding: 25px;
+    }
+
+    .beautifullerlogin{
+        text-align: justify;
+        color: lightgray;
+        font-family: Calibri;
+        font-size: 19px;
+    }
+
+    .margin{
+        margin: 10px;
+    }
+
+    loginC2{
+        position: relative;
+        font-family: Calibri;
+        color: lightgray;
+        font-size: 20px;
+        left: 40px;
+    }
+        }
+    .titre{
+        position: relative;
+        font-family: Calibri;
+        color: #2F5597;
+        font-size: 24px;
+        left: 20px;
+        font-weight: bold;
+    }
+    .accountbutton{
+        border: 2px solid #2F5597;
+        color: #2F5597;
+        background-color: white;
+        width: 95%;
+        border-radius: 10px;
+    }
+
+    .accountbutton:hover{
+        color: white;
+        background-color: #2F5597;
+        text-decoration: none;
+        border-radius: 10px;
+        color: white;
+        border: 2px solid #2F5597;
+    }
+
+    .welcome{
+        position: relative;
+        font-family: Calibri;
+        color: lightgray;
+        font-size: 20px;
+        left: 40px;
+    }
+
+
+
+    .vertialign{
+    min-height: 85%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 85vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+    }
+
+    lcright{
+
+        position: absolute;
+        right: 25%;
+        top: 50%;
+        color: #2F5597;
+        border: solid #2F5597;
+        padding: 10px;
+        border-radius: 15px;
+        padding: 10px;
+    }
+
+    .vertical-center {
+  min-height: 50%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 50vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+}

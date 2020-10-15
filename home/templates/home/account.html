@@ -1,0 +1,167 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="{% static '/media/nav/icone.png'%}" />
+    <head>
+        <link rel="icon" href="{% static '/media/nav/favicon.ico'%}"/>
+        <meta charset="utf-8">
+        <title>Ma page test</title>
+    </head>
+    <div class="container-fullwidth" style="background-color: #2F5597;">
+        <nav class="navbar" >
+            <a class="navbar-brand-centered" href="/home">
+                <img src="{% static '/media/nav/logo.png' %}" height="46"  alt="Co'Coon">
+            </a>
+            <btn class="nav navbar-nav navbar-right" style="background-color: #2F5597;">
+                <li ><a style="color: white" href="/home/loginchoice"><img src= "{% static '/media/nav/image2.svg' %}" height="30"  alt="Co'Coon">  Mon Compte</a></li>
+            </btn>
+            <btn class="nav navbar-nav navbar-left" style="background-color: #2F5597;">
+                <li><a style="color: white" href="/home/rayon">Commander  <img src= "{% static '/media/nav/image1.svg' %}" height="30"  alt="Co'Coon"></a></li>
+            </btn>
+        </nav>
+    </div>
+
+<body>
+    <br/>
+    <div class="row justify-content-center">
+            <div class="col-md-5 order-md-1">
+            <div class="row cartborder">
+                <div class="col-md-12 order-md-1">
+                        <div class="row">
+                            <div class="col-md-12 order-md-1">
+                                <div class="row cocoonback pt-2">
+                                    <h4 class="px-2">Vos information personnelles:</h4>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-md-6 mb-3">
+                                        {{champs.0}} : {{valeurs.0}}
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        {{champs.1}} : {{valeurs.1}}
+                                    </div>
+                                </div>
+                                <div class="row border-top">
+                                <div class="col-md-6 mb-3 mt-1">
+                                    {{champs.2}} : {{valeurs.2}}
+                                </div>
+                                    <div class="col-md-6 mb-3">
+                                        {{champs.3}} : {{valeurs.3}}
+                                    </div>
+                                </div>
+                                <div class="row border-top mt-1">
+                                    <div class="col-md-6 mb-3">
+                                        {{champs.4}} : {{valeurs.4}}
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        {{champs.5}} : {{valeurs.5}}
+                                    </div>
+                                </div>
+                                <div class="row border-top mt-1">
+                                    <div class="col-md-12 mb-3">
+                                        {{champs.6}} : {{valeurs.6}}
+                                    </div>
+                                </div>
+                                <div class="row border-top mt-1">
+                                    <div class="col-md-12 mb-3">
+                                        {{champs.7}} : {{valeurs.7}}
+                                    </div>
+                                </div>
+                                <div class="row border-top border-bottom mt-1">
+                                    <div class="col-md-6 mb-3">
+                                        {{champs.8}} : {{valeurs.8}}
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                    {{champs.9}} : {{valeurs.9}}
+                                    </div>
+                                </div>
+                            <div class="row">
+                                <div class="col-md-12 order-md-1 mt-1">
+                                    <a href="../commandes" class="btn-lg btn-block cocooner mb-2">Mes commandes</a>
+                                </div>
+                            </div>
+                                <div class="row mb-2">
+                            <div class="col-md-6 order-md-1">
+                                    <a href="../panier" class="btn-lg btn-block cocooner ">Mon panier</a>
+                            </div>
+                            <div class="col-md-6 order-md-1">
+                                <a href="../logout" class="btn-lg btn-block cocooner ">Se déconnecter</a>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+    </div>
+                <div class="row"></div>
+                <div class="row cartborder">
+                <div class="col-md-12 order-md-1">
+                        <div class="row">
+                            <div class="col-md-12 order-md-1">
+                                <div class="row cocoonback pt-2">
+                                    <h4 class="px-2">Les membres de votre famille:</h4>
+                                </div>
+                                {% if membres %}
+                                    {% for membre in membres %}
+                                        <div class="row border-top">
+                                    <div class="col-md-6 mb-3">
+                                        {{membre.0}}
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        {{membre.1}}
+                                    </div>
+                                </div>
+                                    {% endfor %}
+                                {% else %}
+                                    <div class="row mt-1">
+                                    <div class="col-md-12 mb-12">
+                                        Vous n'avez aucun membre d'enregistré dans votre foyer
+                                    </div>
+                                </div>
+                                {% endif %}
+                        </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="row cartborder">
+                <div class="col-md-12 order-md-1">
+                        <div class="row">
+                            <div class="col-md-12 order-md-1">
+                                <div class="row cocoonback pt-2">
+                                    <h4 class="px-2">Les allergies du foyer</h4>
+                                </div>
+                                {% if allergies %}
+                                    {% for allergie in allergies %}
+                                        <div class="row mt-1 border-bottom">
+                                    <div class="col-md-6 mb-3">
+                                        {{allergie}}
+                                    </div>
+                                </div>
+                                    {% endfor %}
+                                {% else %}
+                                    <div class="row mt-1">
+                                    <div class="col-md-12 mb-12">
+                                        Aucune allergie n'est enregistrée pour votre foyer
+                                    </div>
+                                </div>
+                                {% endif %}
+                                <div class="row mt-1 py-2">
+                                    <div class="col-md-12 mb-12">
+                                        <a href="../allergie" class="btn-lg btn-block cocooner ">Ajouter une alergie</a>
+                                    </div>
+                                </div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+    </div>
+            </div>
+    </div>
+
+
+</body>
+</html>
